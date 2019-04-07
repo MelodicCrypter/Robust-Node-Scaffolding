@@ -1,6 +1,7 @@
 // Library Modules
 const express = require('express');
 const path = require('path');
+const helmet = require('helmet');
 const es6Renderer = require('express-es6-template-engine');
 
 // App Modules
@@ -16,6 +17,8 @@ app.set('views', 'views');
 app.set('view engine', 'html');
 
 // Middlewares
+// => Helmet, for security of HTTP requests
+app.use(helmet({ dnsPrefetchControl: { allow: true } }));
 //=> Parser
 app.use(express.json());
 // => Static Assets

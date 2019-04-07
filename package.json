@@ -6,15 +6,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev-webp": "concurrently 'webpack --config ./webpack.config.js --mode development' 'yarn dev-node'",
+    "dev-webp": "concurrently 'webpack --config ./webpack.config.js --mode development --watch true' 'yarn dev-node'",
     "dev-node": "browser-refresh ./app-back-bundle.js",
-    "build": "webpack --config ./webpack.config.js --mode production --watch false"
+    "build": "webpack --config ./webpack.config.js --mode production"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
-    "express-es6-template-engine": "^2.1.7"
+    "express-es6-template-engine": "^2.1.7",
+    "helmet": "^3.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

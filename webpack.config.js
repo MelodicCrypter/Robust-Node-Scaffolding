@@ -21,7 +21,6 @@ const frontConfig = {
         path: path.resolve(__dirname, './public/dist/'),
         filename: '[name]-front-bundle.js',
     },
-    watch: true,
     watchOptions: {
         ignored: /node_modules/
     },
@@ -141,7 +140,6 @@ const backConfig = {
       __dirname: true,
       __filename: true
     },
-    watch: true,
     externals: [nodeExternals()],
     module: {
         rules: [
