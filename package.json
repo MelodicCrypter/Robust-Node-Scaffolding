@@ -8,14 +8,19 @@
   "scripts": {
     "dev-webp": "concurrently 'webpack --config ./webpack.config.js --mode development --watch true' 'yarn dev-node'",
     "dev-node": "browser-refresh ./app-back-bundle.js",
-    "build": "webpack --config ./webpack.config.js --mode production"
+    "dev-pm2": "pm2-runtime start ecosystem.config.js --env development",
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "express-es6-template-engine": "^2.1.7",
-    "helmet": "^3.16.0"
+    "express-winston": "^3.1.0",
+    "helmet": "^3.16.0",
+    "mongodb": "^3.2.3",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

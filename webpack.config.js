@@ -43,13 +43,11 @@ const frontConfig = {
                 ]
             },
             {
-                test: /\.(png|jpg|gif)$/i,
+                test: /\.html$/,
                 use: [
                     {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000
-                        }
+                        loader: 'html-loader',
+                        options: { minimize: true }
                     }
                 ]
             },
@@ -68,7 +66,6 @@ const frontConfig = {
                                 progressive: true,
                                 quality: 65
                             },
-                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: false,
                             },
@@ -79,7 +76,6 @@ const frontConfig = {
                             gifsicle: {
                                 interlaced: false,
                             },
-                            // the webp option will enable WEBP
                             webp: {
                                 quality: 75
                             }
@@ -103,7 +99,7 @@ const frontConfig = {
         // new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css",
-            //chunkFilename: "[id].css"
+            chunkFilename: "[id].css"
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -149,7 +145,16 @@ const backConfig = {
                 use: {
                     loader: 'babel-loader'
                 }
-            }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: { minimize: true }
+                    }
+                ]
+            },
         ]
     }
 };
