@@ -8,7 +8,7 @@
   "scripts": {
     "dev-webp": "concurrently 'webpack --config ./webpack.config.js --mode development --watch true' 'yarn dev-node'",
     "dev-node": "browser-refresh ./app-back-bundle.js",
-    "dev-pm2": "pm2-runtime start ecosystem.config.js --env development",
+    "dev-webp-pm2": "concurrently 'webpack --config ./webpack.config.js --mode development' 'pm2-runtime start ecosystem.config.js --env development'",
     "build": "webpack --config ./webpack.config.js --mode production",
     "start": "pm2-runtime start ecosystem.config.js --env production"
   },
