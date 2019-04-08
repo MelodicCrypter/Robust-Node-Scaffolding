@@ -1,7 +1,7 @@
 {
-  "name": "scratz-pad",
+  "name": "MVC-Express-MongoDB-es6Renderer",
   "version": "1.0.0",
-  "main": "./app.js",
+  "main": "./app-back-bundle.js",
   "author": "<hugh@melodiccrypter.com>",
   "license": "MIT",
   "private": true,
