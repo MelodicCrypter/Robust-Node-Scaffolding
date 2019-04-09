@@ -11,11 +11,11 @@ const frontConfig = {
     entry: {
         app: [
             path.resolve(__dirname, './public/js/app-frontend.js'),
-        ],
-        style: [
-            //path.resolve(__dirname, './public/css/app-main-raw.css'),
-            path.resolve(__dirname, './public/css/app-main.scss'),
         ]
+        // style: [
+        //     path.resolve(__dirname, './public/styles/app-main-raw.styles'),
+        //     path.resolve(__dirname, './public/styles/app-main.scss'),
+        // ]
     },
     output: {
         path: path.resolve(__dirname, './public/dist/'),
@@ -39,16 +39,18 @@ const frontConfig = {
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
-                ]
-            },
-            {
-                test: /\.html$/,
-                use: [
                     {
-                        loader: 'html-loader',
-                        options: { minimize: true }
-                    }
+                        loader: "postcss-loader",
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')({
+                                    'browsers': ['> 1%', 'last 2 versions']
+                                }),
+                            ]
+                        }
+                    },
+                    'sass-loader',
                 ]
             },
             {
@@ -58,29 +60,7 @@ const frontConfig = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
-                    'file-loader',
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 65
-                            },
-                            optipng: {
-                                enabled: false,
-                            },
-                            pngquant: {
-                                quality: '65-90',
-                                speed: 4
-                            },
-                            gifsicle: {
-                                interlaced: false,
-                            },
-                            webp: {
-                                quality: 75
-                            }
-                        }
-                    }
+                    'file-loader'
                 ]
             },
             {
@@ -91,12 +71,12 @@ const frontConfig = {
                 ]
             },
             {
-                test: /bootstrap\/dist\/js\/umd\//, use: 'imports-loader?jQuery=jquery'
+                test: /bootstrap\/dist\/js\/umd\//,
+                use: 'imports-loader?jQuery=jquery'
             }
         ]
     },
     plugins: [
-        // new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
@@ -149,11 +129,10 @@ const backConfig = {
             {
                 test: /\.html$/,
                 use: [
-                    {
-                        loader: 'html-loader',
-                        options: { minimize: true }
-                    }
-                ]
+                    'file-loader?name=[name].[ext]',
+                    'extract-loader',
+                    'html-loader'
+                ],
             },
         ]
     }

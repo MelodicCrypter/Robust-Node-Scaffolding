@@ -4,7 +4,7 @@ const path = require('path');
 const helmet = require('helmet');
 const es6Renderer = require('express-es6-template-engine');
 
-// App Modules
+// Local App Modules
 import logger from './util/logger-util';
 import homeRouters from './routes/home';
 import aboutRouters from './routes/about';
@@ -12,7 +12,7 @@ import aboutRouters from './routes/about';
 // Set up
 const app = express();
 const port = process.env.PORT || 3000;
-const publicPath = path.join(__dirname, './public/');
+const publicPath = path.join(__dirname, './public/dist/');
 const logsPath = path.join(__dirname, './logs/');
 
 // View: Template engine

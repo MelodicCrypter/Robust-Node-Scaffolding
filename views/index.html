@@ -8,8 +8,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- this is all your scss or css bundled in one -->
-  <script src="/dist/style-front-bundle.js"></script>
+  <!-- this is all your scss or styles bundled in one -->
+  <!--<script src="style-front-bundle.js"></script>-->
 
 </head>
 
@@ -19,7 +19,8 @@
   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <img src="/public/img/testimg.jpg">
+        <!-- import your images in the app-frontend.js file and append -->
+        <img id="testImg" src="" alt="">
       </div>
     </header>
 
@@ -37,7 +38,7 @@
 
   <!-- Scripts -->
   <!-- => this is your main frontend js file bundle-->
-  <script src="/dist/app-front-bundle.js"></script>
+  <script src="app-front-bundle.js"></script>
   <!-- => this is for the browser refresh, you can delete or comment this one on production -->
   <script src=${process.env.BROWSER_REFRESH_URL}></script>
 

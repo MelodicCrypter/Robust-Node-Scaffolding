@@ -1,6 +1,6 @@
 module.exports = {
     // Default for the style loading
-    styleLoader: 'style-loader!css-loader!sass-loader',
+    styleLoader: 'style-loader!styles-loader!sass-loader',
 
     styles: {
         mixins: true,
