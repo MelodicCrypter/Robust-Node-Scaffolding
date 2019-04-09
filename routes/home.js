@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
             repoAuthor: 'Hugh Caluscusin',
             repoAuthorSite: 'https://www.melodiccrypter.com/',
             repoAuthorGitLink: 'https://github.com/MelodicCrypter',
+            repoLink: 'https://github.com/MelodicCrypter/MVC-Express-MongoDB-es6Renderer',
             handle: '@MelodicCrypter'
         }
     });

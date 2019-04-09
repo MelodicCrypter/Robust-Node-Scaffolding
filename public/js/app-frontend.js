@@ -5,7 +5,7 @@ import $ from "jquery";
 import multiplier from '../../util/multiplier-test-module';
 
 // Images
-import testImg from '../../public/img/testimg.jpg';
+import gitLogo from '../../public/img/git.png';
 
 // SCSS or CSS
 import '../styles/app-main.scss';
@@ -18,7 +18,7 @@ const n = multiplier(4);
 
 // using the image
 const imgTag = document.getElementById('testImg');
-imgTag.src = testImg;
+imgTag.src = gitLogo;
 
 // Check console log
 console.log('God is good!!!');

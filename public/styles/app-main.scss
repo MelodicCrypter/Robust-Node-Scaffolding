@@ -4,11 +4,14 @@
 * All these styles will be bundled with WebPack
 */
 
-// Install first using NPM then import here
+// Install first using NPM or Yarn then import here
 // FontAwesome 5
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/css/all.css";
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Public Assets
+$bgImg : '../../public/img/testimg.jpg';
 
 
 // Globals
@@ -52,10 +55,26 @@ html {
     color: #fff;
     text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+    //background: url($bgImg) no-repeat center center fixed;
+    background: linear-gradient(0deg, rgba(7, 21, 102, 0.5), rgba(9, 16, 3, 0.22)), url($bgImg) no-repeat center center fixed;
+    background-size: cover;
 
     main {
       .cover-heading-sub {
-        color: grey;
+        color: #81bb8b;
+        text-shadow: 1px 1px 1px white;
+        background: white;
+        width: 65%;
+        display: inline-flex;
+        padding-left: 22px;
+        height: 40px;
+        border-radius: 2px;
+        padding-top: 10px;
+      }
+
+      #testImg {
+        width: 10%;
+        border-radius: 50%;
       }
     }
   }
@@ -113,6 +132,7 @@ html {
 
   // Footer
   .mastfoot {
-    color: rgba(255, 255, 255, 0.5);
+    color: #95d2a0;
+    text-shadow: 0px 0px 1px black;
   }
 }

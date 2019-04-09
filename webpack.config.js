@@ -129,10 +129,13 @@ const backConfig = {
             {
                 test: /\.html$/,
                 use: [
-                    'file-loader?name=[name].[ext]',
-                    'extract-loader',
-                    'html-loader'
-                ],
+                    {
+                        loader: 'render-template-loader',
+                        options: {
+                            engine: 'express-es6-template-engine',
+                        }
+                    }
+                ]
             },
         ]
     }
