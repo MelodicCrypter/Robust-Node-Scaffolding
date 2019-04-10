@@ -18,6 +18,12 @@ above, you can also use this in creating simple to advanced websites.
 I have already included a more reliable and easy-to-use templating engine for express **express-es6-template-engine**. This is based on the
 template string feature of ES6. It's very clean and on-point.
 
+Instead of typing long template engine code, all you have to type inside your HTML is the template string of ES6.
+
+```
+<h1 class="heading">${headingTitle}</h1>
+```
+
 <br>
 
 ## Front-End Stuff
@@ -39,8 +45,8 @@ Logger used for this scaffolding are **winston** and **express-winston**.
 <br>
 
 ## Process Manager
-I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, you can checkout
-their documentation or you can omit this one.
+I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, 
+you can check their documentation or you can omit this one.
 
 <br>
 
