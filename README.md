@@ -1,4 +1,6 @@
-# 👋
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
+## 👋
 This scaffolding is meant for backend stuff only. For an instance, if you want to create a Node application on the fly. This is based on MVC 
 (Model-View-Controller) architecture. But, you can also use this scaffolding if you want to create simple to advanced websites. The purpose 
 of this repo is to give you all the important tools already set up for you so you can start building your app ideas right away.

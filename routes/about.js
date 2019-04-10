@@ -6,11 +6,11 @@ router.get('/', (req, res) => {
     res.render('about', {
         locals: {
             pageTitle: 'Node Scaffolding | Hugh Caluscusin',
-            coverTitle: 'This is an About Page - Test only',
-            coverSub: '',
+            coverTitle: 'This is the About Page - Test only',
             repoAuthor: 'Hugh Caluscusin',
             repoAuthorSite: 'https://www.melodiccrypter.com/',
             repoAuthorGitLink: 'https://github.com/MelodicCrypter',
+            repoLink: 'https://github.com/MelodicCrypter/MVC-Express-MongoDB-es6Renderer',
             handle: '@MelodicCrypter'
         }
     });

@@ -24,7 +24,7 @@ app.set('view engine', 'html');
 app.use(helmet({ dnsPrefetchControl: { allow: true } })); // => Helmet, for security of HTTP requests
 app.use(express.json()); // => Parser
 app.use(express.static(publicPath)); // => Static Assets
-app.use(logger(logsPath + '/app-logs.json')); // => Output of logs, using Express-Winston
+app.use(logger(logsPath + '/app-logs.json')); // => Logs, using Winston & Express-Winston
 
 // Main routes using express.Router()
 app.use('/', homeRouters);

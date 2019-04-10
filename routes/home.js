@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
         locals: {
             pageTitle: 'Node Scaffolding | Hugh Caluscusin',
             coverTitle: 'MVC-Express-MongoDB-es6Renderer',
-            coverSub: 'A QUICK NODE SCAFFOLDING, MVC ARCHITECTURE',
             repoAuthor: 'Hugh Caluscusin',
             repoAuthorSite: 'https://www.melodiccrypter.com/',
             repoAuthorGitLink: 'https://github.com/MelodicCrypter',
