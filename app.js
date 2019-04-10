@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const helmet = require('helmet');
+const cors = require('cors');
 const es6Renderer = require('express-es6-template-engine');
 
 // Local App Modules
@@ -22,6 +23,7 @@ app.set('view engine', 'html');
 
 // Middlewares
 app.use(helmet({ dnsPrefetchControl: { allow: true } })); // => Helmet, for security of HTTP requests
+app.use(cors({ origin: false })); // => Cross-Origin Resource Sharing is disabled
 app.use(express.json()); // => Parser
 app.use(express.static(publicPath)); // => Static Assets
 app.use(logger(logsPath + '/app-logs.json')); // => Logs, using Winston & Express-Winston
