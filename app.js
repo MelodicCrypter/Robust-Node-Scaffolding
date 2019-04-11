@@ -22,17 +22,17 @@ app.engine('html', es6Renderer);
 app.set('views', 'views');
 app.set('view engine', 'html');
 
-// Middlewares ===> Security
-app.use(helmet({ dnsPrefetchControl: { allow: true } })); // => Helmet, for security of HTTP requests
-app.use(cors({ origin: false })); // => Cross-Origin Resource Sharing is disabled
-// => some Security middlewares require to be parsed first
-app.use(express.json()); // => Parser for JSON
-app.use(express.urlencoded()); // => Parser for x-www-form-urlencoded
-// Middlewares ===> Security continuation
-app.use(hpp()); // => protection against Parameter Pollution attacks
-// Middlewares ===> Other
-app.use(express.static(publicPath)); // => Static Assets
-app.use(logger(logsPath + '/app-logs.json')); // => Logs, using Winston & Express-Winston
+// Middlewares ======================> Security
+app.use(cors({ origin: false })); // Cross-Origin Resource Sharing is disabled
+app.use(helmet({ dnsPrefetchControl: { allow: true } })); // Helmet, for security of HTTP requests
+// some Security middlewares require to be parsed first
+app.use(express.json({ limit: '300kb' })); // Parser for JSON, with limit to avoid payload
+app.use(express.urlencoded()); // Parser for x-www-form-urlencoded
+// Middlewares ======================> Security continuation...
+app.use(hpp()); // protection against Parameter Pollution attacks
+// Middlewares ======================> Other
+app.use(express.static(publicPath)); // Static Assets
+app.use(logger(logsPath + '/app-logs.json')); // Logs, using Winston & Express-Winston
 
 // Main routes using express.Router()
 app.use('/', homeRouters);
