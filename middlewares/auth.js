@@ -1,1 +1,1 @@
-// You can put your authentication process here... this only a sample for middleware
+// You can put your authentication process here... this only a sample for middlewares
