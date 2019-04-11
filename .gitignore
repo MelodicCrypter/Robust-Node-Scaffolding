@@ -204,6 +204,7 @@ typings/
 !.keep
 !.gitkeep
 !log/.gitkeep
+log/app-logs.json
 
 
 
