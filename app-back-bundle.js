@@ -94,7 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var _routes_about__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes/about */ \"./routes/about-route.js\");\n/* harmony import */ var _routes_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/home */ \"./routes/home-route.js\");\n/* harmony import */ var _util_logger_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/logger-util */ \"./util/logger-util.js\");\n// Local App Modules\n\n\n // Library Modules\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar path = __webpack_require__(/*! path */ \"path\");\n\nvar helmet = __webpack_require__(/*! helmet */ \"helmet\");\n\nvar cors = __webpack_require__(/*! cors */ \"cors\");\n\nvar hpp = __webpack_require__(/*! hpp */ \"hpp\");\n\nvar es6Renderer = __webpack_require__(/*! express-es6-template-engine */ \"express-es6-template-engine\"); // Set up\n\n\nvar app = express();\nvar port = process.env.PORT || 3000;\nvar publicPath = path.join(__dirname, './public/dist/');\nvar logsPath = path.join(__dirname, './logs/'); // View: Template engine\n\napp.engine('html', es6Renderer);\napp.set('views', 'views');\napp.set('view engine', 'html'); // Middlewares ======================> Security\n\napp.use(cors({\n  origin: false\n})); // Cross-Origin Resource Sharing is disabled\n\napp.use(helmet()); // Helmet, for security of HTTP requests\n// some Security middlewares require to be parsed first\n\napp.use(express.json({\n  limit: '300kb'\n})); // Parser for JSON, with limit to avoid payload\n\napp.use(express.urlencoded()); // Parser for x-www-form-urlencoded\n// Middlewares ======================> Security continuation...\n\napp.use(hpp()); // protection against Parameter Pollution attacks\n// Middlewares ======================> Other\n\napp.use(express[\"static\"](publicPath)); // Static Assets\n\napp.use(Object(_util_logger_util__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"\".concat(logsPath, \"/app-logs.json\"))); // Logs, using Winston & Express-Winston\n// Main routes using express.Router()\n\napp.use('/', _routes_home__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\napp.use('/about', _routes_about__WEBPACK_IMPORTED_MODULE_0__[\"default\"]); // Ready\n\napp.listen(port, function () {\n  console.log(\"App is listening on port \".concat(port)); // Browser-Refresh\n  // Comment this out before building for Production\n  // This is only for development, to auto refresh the browser\n\n  if (process.send) {\n    process.send('online');\n  }\n});\n/* WEBPACK VAR INJECTION */}.call(this, \"\"))\n\n//# sourceURL=webpack:///./app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var _routes_about_route__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes/about-route */ \"./routes/about-route.js\");\n/* harmony import */ var _routes_home_route__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/home-route */ \"./routes/home-route.js\");\n/* harmony import */ var _util_logger_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/logger-util */ \"./util/logger-util.js\");\n// Local App Modules\n\n\n // Library Modules\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar path = __webpack_require__(/*! path */ \"path\");\n\nvar helmet = __webpack_require__(/*! helmet */ \"helmet\");\n\nvar cors = __webpack_require__(/*! cors */ \"cors\");\n\nvar hpp = __webpack_require__(/*! hpp */ \"hpp\");\n\nvar es6Renderer = __webpack_require__(/*! express-es6-template-engine */ \"express-es6-template-engine\"); // Set up\n\n\nvar app = express();\nvar port = process.env.PORT || 3000;\nvar publicPath = path.join(__dirname, './public/dist/');\nvar logsPath = path.join(__dirname, './logs/'); // View: Template engine\n\napp.engine('html', es6Renderer);\napp.set('views', 'views');\napp.set('view engine', 'html'); // Middlewares ======================> Security\n\napp.use(cors({\n  origin: false\n})); // Cross-Origin Resource Sharing is disabled\n\napp.use(helmet()); // Helmet, for security of HTTP requests\n// some Security middlewares require to be parsed first\n\napp.use(express.json({\n  limit: '300kb'\n})); // Parser for JSON, with limit to avoid payload\n\napp.use(express.urlencoded()); // Parser for x-www-form-urlencoded\n// Middlewares ======================> Security continuation...\n\napp.use(hpp()); // protection against Parameter Pollution attacks\n// Middlewares ======================> Other\n\napp.use(express[\"static\"](publicPath)); // Static Assets\n\napp.use(Object(_util_logger_util__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"\".concat(logsPath, \"/app-logs.json\"))); // Logs, using Winston & Express-Winston\n// Main routes using express.Router()\n\napp.use('/', _routes_home_route__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\napp.use('/about', _routes_about_route__WEBPACK_IMPORTED_MODULE_0__[\"default\"]); // Ready\n\napp.listen(port, function () {\n  console.log(\"App is listening on port \".concat(port)); // Browser-Refresh\n  // Comment this out before building for Production\n  // This is only for development, to auto refresh the browser\n\n  if (process.send) {\n    process.send('online');\n  }\n});\n/* WEBPACK VAR INJECTION */}.call(this, \"\"))\n\n//# sourceURL=webpack:///./app.js?");
+
+/***/ }),
+
+/***/ "./config/config.js":
+/*!**************************!*\
+  !*** ./config/config.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// You can use any environment variable packages, like dotenv, but I included custom-env instead\n// custom-env module\nvar config = __webpack_require__(/*! custom-env */ \"custom-env\").env(true);\n\nmodule.exports = {\n  config: config\n};\n\n//# sourceURL=webpack:///./config/config.js?");
 
 /***/ }),
 
@@ -102,11 +113,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /*!***********************************************!*\
   !*** ./controllers/pages/about-controller.js ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// Controller for your about page\nvar aboutController = function aboutController(req, res) {\n  res.render('about', {\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'This is the About Page - Test only',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (aboutController);\n\n//# sourceURL=webpack:///./controllers/pages/about-controller.js?");
+eval("// Controller for your about page\nvar renderAbout = function renderAbout(req, res) {\n  res.render('about', {\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'This is the About Page - Test only',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderAbout: renderAbout\n};\n\n//# sourceURL=webpack:///./controllers/pages/about-controller.js?");
 
 /***/ }),
 
@@ -114,35 +124,34 @@ eval("__webpack_require__.r(__webpack_exports__);\n// Controller for your about 
 /*!**********************************************!*\
   !*** ./controllers/pages/home-controller.js ***!
   \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// Controller for your homepage or index\nvar homeController = function homeController(req, res) {\n  res.render('index', {\n    // for es6Renderer\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'Robust-Node-Scaffolding',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (homeController);\n\n//# sourceURL=webpack:///./controllers/pages/home-controller.js?");
+eval("__webpack_require__(/*! ../../config/config */ \"./config/config.js\"); // Controller for your homepage or index\n\n\nvar renderHome = function renderHome(req, res) {\n  res.render('index', {\n    // for es6Renderer\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'Robust-Node-Scaffolding',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderHome: renderHome\n};\n\n//# sourceURL=webpack:///./controllers/pages/home-controller.js?");
 
 /***/ }),
 
-/***/ "./routes/about.js":
-/*!*************************!*\
+/***/ "./routes/about-route.js":
+/*!*******************************!*\
   !*** ./routes/about-route.js ***!
-  \*************************/
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/pages/about-controller */ \"./controllers/pages/about-controller.js\");\n// Controller for this route\n // Express Route\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar router = express.Router(); // The '/' is the root for your About page\n// So if user visits /about, this router will call the pages controller for about\n\nrouter.get('/', _controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./routes/about-route.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/pages/about-controller */ \"./controllers/pages/about-controller.js\");\n/* harmony import */ var _controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0__);\n// Controller for this route\n // Express Route\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar router = express.Router(); // The '/' is the root for your About page\n// So if user visits /about, this router will call the pages controller for about\n\nrouter.get('/', _controllers_pages_about_controller__WEBPACK_IMPORTED_MODULE_0___default.a.renderAbout);\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./routes/about-route.js?");
 
 /***/ }),
 
-/***/ "./routes/home.js":
-/*!************************!*\
+/***/ "./routes/home-route.js":
+/*!******************************!*\
   !*** ./routes/home-route.js ***!
-  \************************/
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/pages/home-controller */ \"./controllers/pages/home-controller.js\");\n// Controller for this route\n // Express Route\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar router = express.Router(); // The '/' is the root for your homepage\n// So if user visits index, this router will call the pages controller for home\n\nrouter.get('/', _controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./routes/home-route.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/pages/home-controller */ \"./controllers/pages/home-controller.js\");\n/* harmony import */ var _controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0__);\n// Controller for this route\n // Express Route\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar router = express.Router(); // The '/' is the root for your homepage\n// So if user visits index, this router will call the pages controller for home\n\nrouter.get('/', _controllers_pages_home_controller__WEBPACK_IMPORTED_MODULE_0___default.a.renderHome);\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./routes/home-route.js?");
 
 /***/ }),
 
@@ -177,6 +186,17 @@ eval("module.exports = __webpack_require__(/*! /Users/MelodicCrypter/Documents/M
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"cors\");\n\n//# sourceURL=webpack:///external_%22cors%22?");
+
+/***/ }),
+
+/***/ "custom-env":
+/*!*****************************!*\
+  !*** external "custom-env" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"custom-env\");\n\n//# sourceURL=webpack:///external_%22custom-env%22?");
 
 /***/ }),
 
