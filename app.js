@@ -1,6 +1,6 @@
 // Local App Modules
-import aboutRoute from './routes/about';
-import homeRoute from './routes/home';
+import aboutRoute from './routes/about-route';
+import homeRoute from './routes/home-route';
 import logger from './util/logger-util';
 
 // Library Modules
