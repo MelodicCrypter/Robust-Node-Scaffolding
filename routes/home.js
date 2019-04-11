@@ -1,19 +1,13 @@
+// Controller for this route
+import home from '../controllers/pages/home-controller';
+
+// Express Route
 const express = require('express');
+
 const router = express.Router();
 
-// The / is the root
-router.get('/', (req, res) => {
-    res.render('index', {
-        locals: {
-            pageTitle: 'Node Scaffolding | Hugh Caluscusin',
-            coverTitle: 'MVC-Express-MongoDB-es6Renderer',
-            repoAuthor: 'Hugh Caluscusin',
-            repoAuthorSite: 'https://www.melodiccrypter.com/',
-            repoAuthorGitLink: 'https://github.com/MelodicCrypter',
-            repoLink: 'https://github.com/MelodicCrypter/MVC-Express-MongoDB-es6Renderer',
-            handle: '@MelodicCrypter'
-        }
-    });
-});
+// The '/' is the root for your homepage
+// So if user visits index, this router will call the pages controller for home
+router.get('/', home);
 
 export default router;

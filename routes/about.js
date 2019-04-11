@@ -1,19 +1,13 @@
+// Controller for this route
+import about from '../controllers/pages/about-controller';
+
+// Express Route
 const express = require('express');
+
 const router = express.Router();
 
-// This / is the root of About page
-router.get('/', (req, res) => {
-    res.render('about', {
-        locals: {
-            pageTitle: 'Node Scaffolding | Hugh Caluscusin',
-            coverTitle: 'This is the About Page - Test only',
-            repoAuthor: 'Hugh Caluscusin',
-            repoAuthorSite: 'https://www.melodiccrypter.com/',
-            repoAuthorGitLink: 'https://github.com/MelodicCrypter',
-            repoLink: 'https://github.com/MelodicCrypter/MVC-Express-MongoDB-es6Renderer',
-            handle: '@MelodicCrypter'
-        }
-    });
-});
+// The '/' is the root for your About page
+// So if user visits /about, this router will call the pages controller for about
+router.get('/', about);
 
 export default router;

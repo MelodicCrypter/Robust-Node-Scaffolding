@@ -1,6 +1,6 @@
 // Local App Modules
-import aboutRouters from './routes/about';
-import homeRouters from './routes/home';
+import aboutRoute from './routes/about';
+import homeRoute from './routes/home';
 import logger from './util/logger-util';
 
 // Library Modules
@@ -24,7 +24,7 @@ app.set('view engine', 'html');
 
 // Middlewares ======================> Security
 app.use(cors({ origin: false })); // Cross-Origin Resource Sharing is disabled
-app.use(helmet({ dnsPrefetchControl: { allow: true } })); // Helmet, for security of HTTP requests
+app.use(helmet()); // Helmet, for security of HTTP requests
 // some Security middlewares require to be parsed first
 app.use(express.json({ limit: '300kb' })); // Parser for JSON, with limit to avoid payload
 app.use(express.urlencoded()); // Parser for x-www-form-urlencoded
@@ -35,8 +35,8 @@ app.use(express.static(publicPath)); // Static Assets
 app.use(logger(`${logsPath}/app-logs.json`)); // Logs, using Winston & Express-Winston
 
 // Main routes using express.Router()
-app.use('/', homeRouters);
-app.use('/about', aboutRouters);
+app.use('/', homeRoute);
+app.use('/about', aboutRoute);
 
 // Ready
 app.listen(port, () => {
