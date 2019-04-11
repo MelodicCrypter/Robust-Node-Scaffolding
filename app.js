@@ -1,3 +1,8 @@
+// Local App Modules
+import aboutRouters from './routes/about';
+import homeRouters from './routes/home';
+import logger from './util/logger-util';
+
 // Library Modules
 const express = require('express');
 const path = require('path');
@@ -5,11 +10,6 @@ const helmet = require('helmet');
 const cors = require('cors');
 const hpp = require('hpp');
 const es6Renderer = require('express-es6-template-engine');
-
-// Local App Modules
-import logger from './util/logger-util';
-import homeRouters from './routes/home';
-import aboutRouters from './routes/about';
 
 // Set up
 const app = express();
@@ -32,7 +32,7 @@ app.use(express.urlencoded()); // Parser for x-www-form-urlencoded
 app.use(hpp()); // protection against Parameter Pollution attacks
 // Middlewares ======================> Other
 app.use(express.static(publicPath)); // Static Assets
-app.use(logger(logsPath + '/app-logs.json')); // Logs, using Winston & Express-Winston
+app.use(logger(`${logsPath}/app-logs.json`)); // Logs, using Winston & Express-Winston
 
 // Main routes using express.Router()
 app.use('/', homeRouters);

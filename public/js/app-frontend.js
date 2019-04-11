@@ -1,11 +1,11 @@
 // Library Modules
-import $ from "jquery";
+import $ from 'jquery';
 
 // Local App Modules
 import multiplier from '../../util/multiplier-test-module';
 
 // Images
-import gitLogo from '../../public/img/git.png';
+import gitLogo from '../img/git.png';
 
 // SCSS or CSS
 import '../styles/app-main.scss';
