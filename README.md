@@ -10,7 +10,7 @@ of this repo is to give you all the important tools already set up so you can st
 <br>
 
 ## Basic Core
-The center gears for this repo are: **Node**, **Express**, and **MongoDB**. This scaffolding does not use React. But, there will be 
+The center gears for this repo are: **Node**, **Express**, and **MongoDB**-**Mongoose**. This scaffolding does not use React. But, there will be 
 another scaffolding repo for that. Sole purpose of this scaffolding is for you to create pure Node applications on the fly. But, as stated 
 above, you can also use this in creating simple to advanced websites.
 
