@@ -1,5 +1,5 @@
 // Controller for your about page
-const aboutController = (req, res) => {
+const renderAbout = (req, res) => {
     res.render('about', {
         locals: {
             pageTitle: 'Node Scaffolding | Hugh Caluscusin',
@@ -13,4 +13,4 @@ const aboutController = (req, res) => {
     });
 };
 
-export default aboutController;
+module.exports = { renderAbout };

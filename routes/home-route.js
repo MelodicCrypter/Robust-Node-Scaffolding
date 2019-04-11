@@ -8,6 +8,6 @@ const router = express.Router();
 
 // The '/' is the root for your homepage
 // So if user visits index, this router will call the pages controller for home
-router.get('/', homeController);
+router.get('/', homeController.renderHome);
 
 export default router;

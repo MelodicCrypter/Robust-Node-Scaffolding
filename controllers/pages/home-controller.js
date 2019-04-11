@@ -1,5 +1,5 @@
 // Controller for your homepage or index
-const homeController = (req, res) => {
+const renderHome = (req, res) => {
     res.render('index', {
         // for es6Renderer
         locals: {
@@ -14,4 +14,4 @@ const homeController = (req, res) => {
     });
 };
 
-export default homeController;
+module.exports = { renderHome };
