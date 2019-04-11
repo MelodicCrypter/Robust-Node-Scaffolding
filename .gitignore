@@ -202,8 +202,9 @@ typings/
 # custom additional
 .idea/
 !.keep
-!logs/.gitkeep
 !.gitkeep
+!log/.gitkeep
+
 
 
 

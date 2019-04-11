@@ -15,7 +15,7 @@ const es6Renderer = require('express-es6-template-engine');
 const app = express();
 const port = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, './public/dist/');
-const logsPath = path.join(__dirname, './logs/');
+const logsPath = path.join(__dirname, './log/');
 
 // View: Template engine
 app.engine('html', es6Renderer);
