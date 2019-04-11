@@ -98,17 +98,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 
-/***/ "./config/config.js":
-/*!**************************!*\
-  !*** ./config/config.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// You can use any environment variable packages, like dotenv, but I included custom-env instead\n// custom-env module\nvar config = __webpack_require__(/*! custom-env */ \"custom-env\").env(true);\n\nmodule.exports = {\n  config: config\n};\n\n//# sourceURL=webpack:///./config/config.js?");
-
-/***/ }),
-
 /***/ "./controllers/pages/about-controller.js":
 /*!***********************************************!*\
   !*** ./controllers/pages/about-controller.js ***!
@@ -125,9 +114,9 @@ eval("// Controller for your about page\nvar renderAbout = function renderAbout(
   !*** ./controllers/pages/home-controller.js ***!
   \**********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("__webpack_require__(/*! ../../config/config */ \"./config/config.js\"); // Controller for your homepage or index\n\n\nvar renderHome = function renderHome(req, res) {\n  res.render('index', {\n    // for es6Renderer\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'Robust-Node-Scaffolding',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderHome: renderHome\n};\n\n//# sourceURL=webpack:///./controllers/pages/home-controller.js?");
+eval("// Controller for your homepage or index\nvar renderHome = function renderHome(req, res) {\n  res.render('index', {\n    // for es6Renderer\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'Robust-Node-Scaffolding',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderHome: renderHome\n};\n\n//# sourceURL=webpack:///./controllers/pages/home-controller.js?");
 
 /***/ }),
 
@@ -186,17 +175,6 @@ eval("module.exports = __webpack_require__(/*! /Users/MelodicCrypter/Documents/M
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"cors\");\n\n//# sourceURL=webpack:///external_%22cors%22?");
-
-/***/ }),
-
-/***/ "custom-env":
-/*!*****************************!*\
-  !*** external "custom-env" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"custom-env\");\n\n//# sourceURL=webpack:///external_%22custom-env%22?");
 
 /***/ }),
 

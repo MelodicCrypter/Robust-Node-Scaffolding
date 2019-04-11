@@ -202,5 +202,9 @@ typings/
 # custom additional
 .idea/
 !.keep
+!logs/.gitkeep
+!.gitkeep
+
+
 
 # End of https://www.gitignore.io/api/node,macos,jetbrains
