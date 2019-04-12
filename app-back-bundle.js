@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// Controller for your about page\nvar renderAbout = function renderAbout(req, res) {\n  res.render('about', {\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'This is the About Page - Test only',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderAbout: renderAbout\n};\n\n//# sourceURL=webpack:///./controllers/pages/about-controller.js?");
+eval("// Controller for your about page\nvar renderAbout = function renderAbout(req, res) {\n  res.render('about', {\n    // for es6Renderer\n    locals: {\n      pageTitle: 'Node Scaffolding | Hugh Caluscusin',\n      coverTitle: 'This is the About Page - Test only',\n      repoAuthor: 'Hugh Caluscusin',\n      repoAuthorSite: 'https://www.melodiccrypter.com/',\n      repoAuthorGitLink: 'https://github.com/MelodicCrypter',\n      repoLink: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',\n      handle: '@MelodicCrypter'\n    }\n  });\n};\n\nmodule.exports = {\n  renderAbout: renderAbout\n};\n\n//# sourceURL=webpack:///./controllers/pages/about-controller.js?");
 
 /***/ }),
 
