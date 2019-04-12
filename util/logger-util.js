@@ -10,7 +10,7 @@ const logger = name => expressWinston.logger({
             maxsize: 5242880,
             maxFiles: 10,
             json: true,
-            colorize: true
+            colorize: true,
         }),
         new winston.transports.File({
             name: name,
@@ -19,7 +19,7 @@ const logger = name => expressWinston.logger({
             maxsize: 5242880,
             maxFiles: 10,
             json: true,
-            colorize: true
+            colorize: true,
         }),
         // Dynamic Status of Level
         // If you go this route, comment out the two transports above
@@ -41,7 +41,7 @@ const logger = name => expressWinston.logger({
         //     json: true,
         //     colorize: true
         // })
-    ]
+    ],
 });
 
 export default logger;

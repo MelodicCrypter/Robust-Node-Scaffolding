@@ -2,7 +2,7 @@
 import $ from 'jquery';
 
 // Local App Modules
-import multiplier from '../../util/multiplier-test-module';
+import multiplier from '../../util/multiplier-sample-module';
 
 // Images
 import gitLogo from '../img/git.png';
