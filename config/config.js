@@ -1,5 +1,5 @@
 /*
-* You can use any environment variable packages, like dotenv, but I chose custom-env instead
+* You can use any environment variable packages, like dotenv, but I chose custom-env instead.
 * If you are also going to use custom-env, all you have to do is set your environment variables
 * inside your specific .env and require this config.js file like this:
 *
