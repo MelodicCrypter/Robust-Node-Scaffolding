@@ -1,6 +1,8 @@
 /*
-* This scaffolding uses Joi validation. You can use any validators you want.
+* This section uses Joi validation. You can use any validators you want.
 * The data below are just samples taken from joi npm page.
+* These schemas are mostly will be used inside app.js => routes => controllers
+* to validate incoming data from req.body
 */
 
 // Joi
