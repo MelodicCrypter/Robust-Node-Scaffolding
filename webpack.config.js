@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -11,7 +11,7 @@ const frontConfig = {
     entry: {
         app: [
             path.resolve(__dirname, './public/js/app-frontend.js'),
-        ]
+        ],
         // style: [
         //     path.resolve(__dirname, './public/styles/app-main-raw.styles'),
         //     path.resolve(__dirname, './public/styles/app-main.scss'),
@@ -22,7 +22,7 @@ const frontConfig = {
         filename: '[name]-front-bundle.js',
     },
     watchOptions: {
-        ignored: /node_modules/
+        ignored: /node_modules/,
     },
     devtool: 'inline-source-map',
     module: {
@@ -32,7 +32,7 @@ const frontConfig = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                }
+                },
             },
             {
                 test: [/.css$|.scss$/],
@@ -40,18 +40,18 @@ const frontConfig = {
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
-                        loader: "postcss-loader",
+                        loader: 'postcss-loader',
                         options: {
                             ident: 'postcss',
                             plugins: [
                                 require('autoprefixer')({
-                                    'browsers': ['> 1%', 'last 2 versions']
+                                    browsers: ['> 1%', 'last 2 versions'],
                                 }),
-                            ]
-                        }
+                            ],
+                        },
                     },
                     'sass-loader',
-                ]
+                ],
             },
             {
                 test: /\.(ttf|woff|woff2|eot|svg)(\?[\s\S]+)?$/,
@@ -60,26 +60,26 @@ const frontConfig = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
-                    'file-loader'
-                ]
+                    'file-loader',
+                ],
             },
             {
                 test: /font-awesome\.config\.js/,
                 use: [
                     { loader: 'style-loader' },
-                    { loader: 'font-awesome-loader' }
-                ]
+                    { loader: 'font-awesome-loader' },
+                ],
             },
             {
                 test: /bootstrap\/dist\/js\/umd\//,
-                use: 'imports-loader?jQuery=jquery'
-            }
-        ]
+                use: 'imports-loader?jQuery=jquery',
+            },
+        ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -94,10 +94,10 @@ const frontConfig = {
             Popover: 'exports-loader?Popover!bootstrap/js/dist/popover',
             Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
             Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
-            Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-            Util: 'exports-loader?Util!bootstrap/js/dist/util'
+            Tooltip: 'exports-loader?Tooltip!bootstrap/js/dist/tooltip',
+            Util: 'exports-loader?Util!bootstrap/js/dist/util',
         }),
-    ]
+    ],
 };
 
 // Backend config =======================================================
@@ -106,15 +106,15 @@ const backConfig = {
     entry: {
         app: [
             path.resolve(__dirname, './app.js'),
-        ]
+        ],
     },
     output: {
         path: path.resolve(__dirname, './'),
         filename: 'app-back-bundle.js',
     },
     node: {
-      __dirname: true,
-      __filename: true
+        __dirname: true,
+        __filename: true,
     },
     externals: [nodeExternals()],
     module: {
@@ -123,8 +123,8 @@ const backConfig = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader'
-                }
+                    loader: 'babel-loader',
+                },
             },
             {
                 test: /\.html$/,
@@ -133,13 +133,13 @@ const backConfig = {
                         loader: 'render-template-loader',
                         options: {
                             engine: 'express-es6-template-engine',
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             },
-        ]
-    }
+        ],
+    },
 };
 
 // Combined
-module.exports = [ frontConfig, backConfig ];
+module.exports = [frontConfig, backConfig];

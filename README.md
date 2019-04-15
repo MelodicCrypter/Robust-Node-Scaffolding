@@ -1,11 +1,11 @@
-
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ## 👋 Hi
 This scaffolding is robust in terms of security measures (read below). All important matters were set up already. From linting to bundling. 
 Also, this is based on MVC (Model-View-Controller) architecture. This scaffolding was meant for backend stuff. For an instance, if you want 
-to create a Node application on the fly. But, you can also use this scaffolding if you want to create simple to advanced websites. The purpose
-of this repo is to give you all the important tools already set up so you can start building your app ideas right away.
+to create a Node application on the fly. But, you can also use this scaffolding if you want to create simple to advanced websites (frontend
+stuffs included). The purpose of this repo is to give you all the important tools already set up so you can start building your app ideas 
+right away. Scroll to **GET STARTED** below if you want to skip all the blah-blah-blah's. 
 
 <br>
 
@@ -19,6 +19,30 @@ above, you can also use this in creating simple to advanced websites.
 ## Security - Middlewares
 Securing your application is really vital. So implemented in this scaffolding were tested and trusted security modules like: **Helmet**, 
 **CORS**, **HPP**,  
+
+<br>
+
+## Logger
+Logger used for this scaffolding are **winston** and **express-winston**.
+
+<br>
+
+## Process Manager
+I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, 
+you can check their documentation or you can omit this one.
+
+<br>
+
+## Linted
+This scaffolding uses **Eslint**, **eslint-plugin-security** (for detecting vulnerable coding style), and **eslint-config-airbnb-improved**.
+
+<br>
+
+## Config
+This scaffolding uses **custom-env** as the environment parser. Basically, you can create a *.env.testing*, *.env.development*, etc., for your 
+specific environment variables. 
+
+NOTE: Don't publicly upload or share your .env files.
 
 <br>
 
@@ -41,15 +65,19 @@ already saved your precious time for that.
 
 <br>
 
-## Logger
-Logger used for this scaffolding are **winston** and **express-winston**.
+## "Hot-Reload"
+To auto-reload your browser when you are in development, this scaffolding uses **Browser-Refresh**. I did not use the webpack-dev-server 
+because I like the simplicity of browser-refresh and its ease of use.
+
+
+
+## Schemas and Validation
+For the database schema, **Mongoose** was used. For the validation, **Joigoose** (a JOI-dependent npm) was used. Joigoose has also schemas. 
 
 <br>
 
-## Process Manager
-I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, 
-you can check their documentation or you can omit this one.
-
+## Test
+For the test section, I've already included **Mocha**, **Expect** and **Supertest**. But, you can use any test suite you want.
 
 <br>
 
@@ -58,15 +86,54 @@ I have also added latest versions of **Bootstrap** and **FontAwesome** so that i
 so in no time.
 
 <br>
+<br>
 
-## Linted
-This scaffolding uses **Eslint**, **eslint-plugin-security** (for detecting vulnerable coding style), and **eslint-config-airbnb-improved**.
+# Getting Started
+Just clone this repo inside your project directory and then install all its dependencies. This repo uses Yarn, however, if you will use NPM 
+just delete the yarn.lock then *'npm install'*.
 
 <br>
 
-## Test
-...
+```
+yarn install
+```
 
 <br>
 
-Of course you can modify this to suit your application's needs.
+or
+
+<br>
+
+```
+npm install
+``` 
+
+<br>
+
+## Entry Points
+Your main entry point for your backend stuff (Node) is the **app.js** file. Placed inside the root of your project directory. Your main entry 
+for your frontend stuff is the **app-frontend.js** file. Placed inside public/js/ directory. The entry points are for development only, because 
+when you deploy, you need to build and minimized all files.
+
+## More info about app-frontend.js file
+Inside this file are all frontend stuffs. Firstly, this scaffolding uses SASS for the styles (you can use CSS if you want) so that I can 
+easily import all other styles into it. The main scss file is placed inside public/styles/ directory, namely **app-main.scss**. Inside this
+scss file, I have imported *fontawesome styles* and *bootstrap styles*. Then I imported the app-main.scss into the app-frontend.js file. 
+
+<br>
+
+Basically, all utility modules, all other modules, styles, and assets like images are imported inside this file, so that when you build 
+(using WebPack) you only have one main entry point for your frontend stuffs.
+
+<br>
+
+## After-Build Entry Points
+So, after you build your files, your entry point for your backend stuff will be **app-back-bundle.js**. Still, placed in the root of your 
+project. And, for your frontend stuff, it will be **app-front-bundle.js**, which will be placed inside public/dist/ directory. Also, this 
+/dist directory will be the source for all your public assets when deployed, like images, svg, etc.
+
+<br>
+<br>
+
+That's it! You have a robust scaffolding with all important packages already set up for you. But, you can edit all configs, remove or add 
+your own dependency if you want. Please don't forget to star this repo if you find this useful.
