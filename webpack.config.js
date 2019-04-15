@@ -80,7 +80,10 @@ const frontConfig = {
         ],
     },
     optimization: {
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [
+            new TerserJSPlugin({}),
+            new OptimizeCSSAssetsPlugin({}),
+        ],
     },
     plugins: [
         new MiniCssExtractPlugin({
