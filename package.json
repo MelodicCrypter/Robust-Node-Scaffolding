@@ -17,7 +17,8 @@
     "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "engines": {
-    "node": "10.15.1"
+    "node": "10.15.1",
+    "yarn": "1.13.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
