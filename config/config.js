@@ -5,8 +5,9 @@
 *
 * require('../../config/config')
 *
-* at the very top of your files. For an instance you can create .env.test for testing and
-* .env.development for development stage put all your specific variables there.
+* at the very top of your files. Change the path where you put your confg.js.
+* For an instance you can create .env.test for testing and .env.development for development stage
+* put all your specific variables there.
 */
 
 // custom-env module

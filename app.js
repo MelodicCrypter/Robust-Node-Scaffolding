@@ -1,4 +1,5 @@
 // Local App Modules
+import './config/config';
 import aboutRoute from './routes/about-route';
 import homeRoute from './routes/home-route';
 import logger from './util/logger-util';
@@ -13,7 +14,7 @@ const es6Renderer = require('express-es6-template-engine');
 
 // Set up
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const publicPath = path.join(__dirname, './public/dist/');
 const logsPath = path.join(__dirname, './log/');
 
