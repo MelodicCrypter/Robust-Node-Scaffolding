@@ -21,10 +21,11 @@ module.exports = {
     deploy: {
         production: {
             user: 'node',
-            host: '212.83.163.1',
+            host: 'robust-node-scaffolding.herokuapp.com',
             ref: 'origin/master',
             repo: 'https://github.com/MelodicCrypter/Robust-Node-Scaffolding',
             path: './app-back-bundle.js',
+            'post-deploy': 'yarn install && pm2-runtime reload ecosystem.config.js --env production',
         },
     },
 };
