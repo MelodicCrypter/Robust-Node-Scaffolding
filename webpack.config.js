@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -12,10 +13,6 @@ const frontConfig = {
         app: [
             path.resolve(__dirname, './public/js/app-frontend.js'),
         ],
-        // style: [
-        //     path.resolve(__dirname, './public/styles/app-main-raw.styles'),
-        //     path.resolve(__dirname, './public/styles/app-main.scss'),
-        // ]
     },
     output: {
         path: path.resolve(__dirname, './public/dist/'),
@@ -50,7 +47,12 @@ const frontConfig = {
                             ],
                         },
                     },
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: devMode,
+                        },
+                    },
                 ],
             },
             {
@@ -75,6 +77,9 @@ const frontConfig = {
                 use: 'imports-loader?jQuery=jquery',
             },
         ],
+    },
+    optimization: {
+        minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
         new MiniCssExtractPlugin({
