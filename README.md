@@ -18,7 +18,7 @@ above, you can also use this in creating simple to advanced websites.
 
 ## Security - Middlewares
 Securing your application is really vital. So implemented in this scaffolding were tested and trusted security modules like: **Helmet**, 
-**CORS**, **HPP**,  
+**CORS**, and **HPP**.
 
 <br>
 
@@ -69,7 +69,7 @@ already saved your precious time for that.
 To auto-reload your browser when you are in development, this scaffolding uses **Browser-Refresh**. I did not use the webpack-dev-server 
 because I like the simplicity of browser-refresh and its ease of use.
 
-
+<br>
 
 ## Schemas and Validation
 For the database schema, **Mongoose** was used. For the validation, **Joigoose** (a JOI-dependent npm) was used. Joigoose has also schemas. 
@@ -89,8 +89,8 @@ so in no time.
 <br>
 
 # Getting Started
-Just clone this repo inside your project directory and then install all its dependencies. This repo uses Yarn, however, if you will use NPM 
-just delete the yarn.lock then *'npm install'*.
+Just clone this repo inside your project directory and then install all its dependencies. This repo uses Yarn, however, if you will use NPM,
+delete the yarn.lock then *'npm install'*.
 
 <br>
 
@@ -204,7 +204,8 @@ create this:
 <br>
 
 ## NOTE:
-You need to run **dev-webp** script at least once so that Webpack can create the main entry points
+You need to run **dev-webp** script at least once so that Webpack can create the main entry points. You can open localhost:3000 in your 
+browser to test if everything is working.
 
 <br>
 
