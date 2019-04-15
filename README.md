@@ -133,7 +133,83 @@ project. And, for your frontend stuff, it will be **app-front-bundle.js**, which
 /dist directory will be the source for all your public assets when deployed, like images, svg, etc.
 
 <br>
+
+## Package Scripts
+When you are in development stage, you can use this one (you can create your own if you want):
+
+<br>
+
+```
+"dev-webp": "concurrently 'webpack --config ./webpack.config.js --mode development --watch true' 'yarn dev-node'"
+```
+
+<br>
+
+**dev-webp** will run webpack on development mode and then after run immediately **dev-node**
+
+<br>
+
+```
+"dev-node": "browser-refresh ./app-back-bundle.js"
+```
+
+<br>
+
+dev-node uses browser-refresh for the auto-reloading of your browser. So, whenever you hit save, Webpack will re-bundle and then trigger 
+browser-refresh to reload the browser. By the way, **concurrently** is a node package that enables you to run scripts after the other.
+
+<br>
+
+If you want to try PM2 in your development stage, run this script:
+
+<br>
+
+```
+"dev-webp-pm2": "concurrently 'webpack --config ./webpack.config.js --mode development' 'pm2-runtime start ecosystem.config.js --env development'"
+```
+
+<br>
+
+Again, it runs Webpack, and then triggers PM2 which is in development mode as well. If all is set and you are ready to deploy run the build
+script.
+
+<br>
+
+```
+ "build": "webpack --config ./webpack.config.js --mode production"
+```
+
+<br>
+
+Then, on your deployment server you can run the start script that uses PM2 as your Process Manager. 
+
+<br>
+
+```
+"start": "pm2-runtime start ecosystem.config.js --env production"
+```
+
+<br>
+
+If you don't want to use PM2, you can use any other process manager you want, or if you just want to run without any manager you can simply
+create this:
+
+<br>
+
+```
+"start": "node app-back-bundle.js"
+```
+
+<br>
+<br>
+
+## NOTE:
+You need to run **dev-webp** script at least once so that Webpack can create the main entry points
+
 <br>
 
 That's it! You have a robust scaffolding with all important packages already set up for you. But, you can edit all configs, remove or add 
 your own dependency if you want. Please don't forget to star this repo if you find this useful.
+
+<br>
+<br>
