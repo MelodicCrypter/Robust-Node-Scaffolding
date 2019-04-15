@@ -79,6 +79,7 @@ const frontConfig = {
         ],
     },
     optimization: {
+        minimize: true,
         minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
