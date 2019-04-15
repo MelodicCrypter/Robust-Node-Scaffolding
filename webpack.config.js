@@ -126,17 +126,6 @@ const backConfig = {
                     loader: 'babel-loader',
                 },
             },
-            {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'render-template-loader',
-                        options: {
-                            engine: 'express-es6-template-engine',
-                        },
-                    },
-                ],
-            },
         ],
     },
 };
