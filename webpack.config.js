@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -79,8 +80,7 @@ const frontConfig = {
         ],
     },
     optimization: {
-        minimize: true,
-        minimizer: [new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
         new MiniCssExtractPlugin({
