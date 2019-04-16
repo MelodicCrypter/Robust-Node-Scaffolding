@@ -10,9 +10,9 @@ right away. Scroll to **GET STARTED** below if you want to skip all the blah-bla
 <br>
 
 ## Basic Core
-The center gears for this repo are: **Node**, **Express**, and **MongoDB**-**Mongoose**. This scaffolding does not use React. But, there will be 
-another scaffolding repo for that. Sole purpose of this scaffolding is for you to create pure Node applications on the fly. But, as stated 
-above, you can also use this in creating simple to advanced websites.
+The center gears for this repo are: **Node**, **Express**, **MongoDB**-**Mongoose**, and **es6Renderer**. This scaffolding does not use React. 
+But, there will be another scaffolding repo for that. Sole purpose of this scaffolding is for you to create pure Node applications on the 
+fly. But, as stated above, you can also use this in creating simple to advanced websites.
 
 <br>
 
@@ -29,7 +29,7 @@ Logger used for this scaffolding are **winston** and **express-winston**.
 
 ## Process Manager
 I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, 
-you can check their documentation or you can omit this one.
+you can check their documentation or you can omit this one if you like.
 
 <br>
 
@@ -110,6 +110,39 @@ npm install
 
 <br>
 
+## Development Phase
+Make sure to uncomment this code:
+
+<br>
+
+```
+if (process.send) {
+    process.send('online');
+}
+```
+
+<br>
+
+inside the app.js file. This section will allow browser-refresh to work for the auto-reloading of your browser. And, also this one:
+
+<br>
+
+```
+<script src=${process.env.BROWSER_REFRESH_URL}></script>
+```
+
+<br>
+
+this is placed in the footer.html file which is inside the views/partials/ directory.
+
+<br>
+
+## Before-Build
+If you are ready to deploy or just want to try to *build* your app, comment out again all the codes mentioned above first then run build
+script inside the package.json file.
+
+<br>
+
 ## Entry Points
 Your main entry point for your backend stuff (Node) is the **app.js** file. Placed inside the root of your project directory. Your main entry 
 for your frontend stuff is the **app-frontend.js** file. Placed inside public/js/ directory. The entry points are for development only, because 
@@ -127,10 +160,20 @@ Basically, all utility modules, all other modules, styles, and assets like image
 
 <br>
 
+**NOTE**: On production, Webpack will automatically extract all css and separate them from the JS files through the use of **mini-css-extract-plugin**. 
+So, I have already included it in the partials inside views/partials/ directory called header.html, all css files, **app.css**.
+
+<br>
+
 ## After-Build Entry Points
 So, after you build your files, your entry point for your backend stuff will be **app-back-bundle.js**. Still, placed in the root of your 
 project. And, for your frontend stuff, it will be **app-front-bundle.js**, which will be placed inside public/dist/ directory. Also, this 
 /dist directory will be the source for all your public assets when deployed, like images, svg, etc.
+
+<br>
+
+## .ENV
+Don't forget to create *.env.testing* and *.env.development* files. Inside each file, set your environment variables.
 
 <br>
 
