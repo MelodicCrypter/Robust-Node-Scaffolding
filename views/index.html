@@ -1,19 +1,7 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>${pageTitle}</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- app.css is for production only, you can comment this when in development mode-->
-  <link rel="stylesheet" type="text/css" href="app.css">
-</head>
+<!-- Main Header, placed in views/partials/header.html -->
+${header}
 
 <body class="text-center">
-
   <!-- temporary pre-made Bootstrap sample -->
   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
@@ -38,11 +26,6 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
-  <!-- => this is your main frontend js file bundle-->
-  <script src="app-front-bundle.js"></script>
-  <!-- => this is for the browser refresh, delete or comment this one on production -->
-  <!--<script src=${process.env.BROWSER_REFRESH_URL}></script>-->
-
-</body>
-</html>
+<!-- Main Footer, placed in views/partials/footer.html -->
+<!-- body and html closing tags are inside here as well -->
+${footer}

@@ -1,47 +1,30 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-    <title>${pageTitle}</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- app.css is for production only, you can comment this when in development mode-->
-    <link rel="stylesheet" type="text/css" href="app.css">
-</head>
+<!-- Main Header, placed in views/partials/header.html -->
+${header}
 
 <body class="text-center">
+    <!-- temporary pre-made Bootstrap sample -->
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
 
-<!-- temporary pre-made Bootstrap sample -->
-<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-        <div class="inner">
+            </div>
+        </header>
 
-        </div>
-    </header>
+        <main role="main" class="inner cover">
+            <!-- import your images in the app-frontend.js file and append -->
+            <img id="testImg" src="" alt="">
 
-    <main role="main" class="inner cover">
-        <!-- import your images in the app-frontend.js file and append -->
-        <img id="testImg" src="" alt="">
+            <h1 class="cover-heading">${coverTitle}</h1>
+        </main>
 
-        <h1 class="cover-heading">${coverTitle}</h1>
-    </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Scaffolding by [ <a href=${repoAuthorSite}>${repoAuthor}</a> ] <i class="fas fa-hand-rock"></i>  <i class="fas fa-rocket"></i></p>
+                <p>#handle <a href=${repoAuthorGitLink}>${handle}</a>, #repo <a href=${repoLink}>Link</a></p>
+            </div>
+        </footer>
+    </div>
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p>Scaffolding by [ <a href=${repoAuthorSite}>${repoAuthor}</a> ] <i class="fas fa-hand-rock"></i>  <i class="fas fa-rocket"></i></p>
-            <p>#handle <a href=${repoAuthorGitLink}>${handle}</a>, #repo <a href=${repoLink}>Link</a></p>
-        </div>
-    </footer>
-</div>
-
-<!-- Scripts -->
-<!-- => this is your main frontend js file bundle-->
-<script src="app-front-bundle.js"></script>
-<!-- => this is for the browser refresh, delete or comment this one on production -->
-<!--<script src=${process.env.BROWSER_REFRESH_URL}></script>-->
-
-</body>
-</html>
+<!-- Main Footer, placed in views/partials/footer.html -->
+<!-- body and html closing tags are inside here as well -->
+${footer}
