@@ -14,7 +14,7 @@
     "dev-webp-pm2": "concurrently 'webpack --config ./webpack.config.js --mode development' 'pm2-runtime start ./ecosystem.config.js --env development'",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha tests/**/*.test.js",
     "build": "webpack --config ./webpack.config.js --mode production",
-    "start": "pm2 start ./ecosystem.config.js --env production"
+    "start": "pm2-runtime start ./ecosystem.config.js --env production"
   },
   "engines": {
     "node": "10.15.1",

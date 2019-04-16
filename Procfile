@@ -1,1 +1,1 @@
-"start": "pm2 start ecosystem.config.js --env production"
+"start": "pm2-runtime start ./ecosystem.config.js --env production"
