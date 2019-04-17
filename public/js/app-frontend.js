@@ -17,7 +17,7 @@ import '../styles/app-main.scss';
 // if use this, etup LOGROCKET_APP_ID on your production server
 import LogRocket from 'logrocket';
 
-LogRocket.init(process.env.LOGROCKET_APP_ID);
+LogRocket.init(LOGROCKET_APP_ID);
 
 
 // ========================================================================

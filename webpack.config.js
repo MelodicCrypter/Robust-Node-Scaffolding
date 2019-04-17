@@ -86,6 +86,9 @@ const frontConfig = {
         ],
     },
     plugins: [
+        new webpack.DefinePlugin({
+            LOGROCKET_APP_ID: JSON.stringify(process.env.LOGROCKET_APP_ID),
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
