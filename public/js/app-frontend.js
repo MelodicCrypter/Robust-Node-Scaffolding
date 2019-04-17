@@ -1,19 +1,28 @@
-// Library Modules
+// JQUERY
 import $ from 'jquery';
 
-// Local App Modules
+// UTILITIES
 import multiplier from '../../util/multiplier-sample-module';
 
-// Images
+// IMAGES
 import gitLogo from '../img/git.png';
 
 // SCSS or CSS
 import '../styles/app-main.scss';
 
 
+// =======================================================================
+// LogRocket - on production only
+// You can delete this one if you will not use LogRocket
+// if use this, etup LOGROCKET_APP_ID on your production server
+import LogRocket from 'logrocket';
+
+LogRocket.init(process.env.LOGROCKET_APP_ID);
+
+
 // ========================================================================
-// Put all your stuff here
-// You can delete ALL below, this is just to test WebPack bundler and Babel work
+// Put all your logic stuff for frontend here
+// You can delete and replace ALL below, this is just to test WebPack bundler and Babel work
 const n = multiplier(4);
 
 // using the image
