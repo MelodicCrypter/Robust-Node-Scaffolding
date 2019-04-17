@@ -31,4 +31,4 @@ imgTag.src = gitLogo;
 
 // Check console log
 console.log('God is good!!!');
-console.log(n);
+console.log(process.env.LOGROCKET_APP_ID);
