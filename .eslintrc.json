@@ -21,6 +21,8 @@
     ],
     "rules": {
         "no-console": 0,
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "sort-imports": "off",
+        "no-unused-vars": "off"
     }
 }
