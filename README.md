@@ -29,7 +29,9 @@ Logger used for this scaffolding are **winston** and **express-winston**.
 
 ## Process Manager
 I have included **PM2** as its **Process Manager**. If you're going to deploy, **PM2** is a great choice. If you haven't heard about **PM2**, 
-you can check their documentation or you can omit this one if you like.
+you can check their documentation or you can omit this one if you like. PM2 is a very powerful tool. It also has a mode for development, using
+their **pm2-dev** which provides auto reloading when it detects any file change. And many more! However, I'm only using PM2, for this specific 
+repo as process manager solely - especially its Cluster feature (which is derived from Node).
 
 <br>
 
