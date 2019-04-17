@@ -30,5 +30,5 @@ const imgTag = document.getElementById('testImg');
 imgTag.src = gitLogo;
 
 // Check console log
-console.log('God is good!!!');
-console.log(process.env.LOGROCKET_APP_ID);
+console.log('God is good!!! It is working!');
+console.log(n);
