@@ -17,8 +17,8 @@ fly. But, as stated above, you can also use this in creating simple to advanced 
 <br>
 
 ## Security - Middlewares
-Securing your application is really vital. So implemented in this scaffolding were tested and trusted security modules like: **Helmet**, 
-**CORS**, and **HPP**.
+Securing your application is the most vital step in any application development. So implemented in this scaffolding were tested and trusted 
+security modules like: **Helmet**, **CORS**, and **HPP**.
 
 <br>
 
