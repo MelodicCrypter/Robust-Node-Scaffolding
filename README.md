@@ -1,7 +1,7 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ## 👋 Hi
-This scaffolding is robust in terms of security measures (read below). All important matters were set up already. From linting to bundling. 
+This scaffolding is robust in terms of security (read below). All important matters (packages) were set up already. From linting to bundling. 
 Also, this is based on MVC (Model-View-Controller) architecture. This scaffolding was meant for backend stuff. For an instance, if you want 
 to create a Node application on the fly. But, you can also use this scaffolding if you want to create simple to advanced websites (frontend
 stuffs included). The purpose of this repo is to give you all the important tools already set up so you can start building your app ideas 
