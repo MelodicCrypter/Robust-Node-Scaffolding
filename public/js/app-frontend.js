@@ -14,7 +14,7 @@ import '../styles/app-main.scss';
 // =======================================================================
 // LogRocket - on production only
 // You can delete this one if you will not use LogRocket
-// if use this, etup LOGROCKET_APP_ID on your production server
+// if use this, setup LOGROCKET_APP_ID on your production server
 import LogRocket from 'logrocket';
 
 LogRocket.init(LOGROCKET_APP_ID);
